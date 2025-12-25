@@ -36,7 +36,8 @@ class Storage:
 
     def _persist(self):
         with self.analyses_file.open("w") as f:
-            json.dump([a.dict() for a in self.analyses], f, indent=2)
+            # Pydantic v2 uses model_dump. Use dict() for compatibility but model_dump is preferred.
+            json.dump([a.model_dump() if hasattr(a, "model_dump") else a.dict() for a in self.analyses], f, indent=2)
 
     def get_all_analyses(self, user_id: Optional[str] = None) -> List[AnalysisResponse]:
         if not user_id:
@@ -84,7 +85,7 @@ class Storage:
         for a in user_analyses:
             for ev in a.evidence_used:
                 if ev.title not in seen_titles:
-                    all_ev.append(ev.dict())
+                    all_ev.append(ev.model_dump() if hasattr(ev, "model_dump") else ev.dict())
                     seen_titles.add(ev.title)
 
         return all_ev

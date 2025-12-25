@@ -43,7 +43,7 @@ class AnalysisOrchestrator:
 
         evidence_for_ui = [
             {
-                "source_type": ev.source_type,
+                "source_type": ev.source_type.value if hasattr(ev.source_type, "value") else str(ev.source_type),
                 "title": ev.title,
                 "source_name": ev.source_name,
                 "year": str(ev.published_year),
@@ -61,14 +61,19 @@ class AnalysisOrchestrator:
 
         for inv in investors_from_report:
             score = inv.get("fit_score", 75)
+            # Ensure score is within valid range
+            score = max(5, min(98, score))
             investor_scores.append(score)
+            
+            # Robust initials logic
+            raw_name = inv.get("name", "Unknown Investor")
+            initials = "".join([n[0] for n in raw_name.split() if n]) if raw_name else "VC"
+            
             final_investors.append(
                 {
-                    "name": inv.get("name", "Unknown Investor"),
+                    "name": raw_name,
                     "fit_score": score,
-                    "logo_initials": "".join(
-                        [n[0] for n in inv.get("name", "U").split()]
-                    )[:3],
+                    "logo_initials": initials[:3].upper(),
                     "focus_areas": inv.get("focus_areas", [request.sector]),
                     "reasons": inv.get(
                         "reasons",
@@ -85,16 +90,26 @@ class AnalysisOrchestrator:
             if investor_scores
             else 50
         )
-        evidence_score = reasoning_result.support_ratio * 100
-
-        # 70% weight on top match quality, 30% on evidence availability #like 70:30
-        blended_score = int((avg_inv_score * 0.7) + (evidence_score * 0.3))
+        # Evidence score is normalized
+        evidence_score = min(100, (len(evidence_units) / 7.0) * 100) if evidence_units else 30
+        
+        # 0.6 factor from validator ratio, 0.4 from aggregate investor match
+        reasoning_ratio_score = reasoning_result.support_ratio * 100
+        
+        blended_score = int(
+            (avg_inv_score * 0.45) + 
+            (reasoning_ratio_score * 0.45) + 
+            (evidence_score * 0.1)
+        )
+        
+        # Final cap for realism
+        blended_score = max(5, min(99, blended_score))
 
         return AnalysisResponse(
             analysis_id=str(uuid.uuid4()),
             user_id=request.user_id,
             startup_summary=report.get(
-                "executive_summary", f"Analysis for {request.sector} startup."
+                "executive_summary", f"Analysis for {request.sector} startup based on available evidence."
             ),
             confidence_indicator=reasoning_result.confidence_level,
             overall_score=blended_score,
@@ -103,15 +118,16 @@ class AnalysisOrchestrator:
                 {
                     "name": "General VC",
                     "fit_score": 50,
+                    "logo_initials": "VC",
                     "reasons": [
-                        "No specific investor matches found in current evidence."
+                        "No specific investor matches found in current evidence. Recommend exploring general sector funds."
                     ],
                 }
             ],
             why_fits=report.get("why_this_fits", []),
             why_does_not_fit=report.get("why_this_does_not_fit", []),
             evidence_used=evidence_for_ui,
-            created_at=datetime.datetime.now().isoformat(),
+            created_at=datetime.datetime.utcnow().isoformat() + "Z", # Standard UTC format
             metadata={
                 "language": request.language,
                 "engine_version": "1.0.0-rag-decision-centric",

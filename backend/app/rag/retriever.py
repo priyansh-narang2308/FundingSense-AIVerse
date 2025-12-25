@@ -212,26 +212,46 @@ class Retriever:
             raw_text = response.text.strip()
             print(f"[*] [DEBUG] Generative response length: {len(raw_text)}")
             
-            # Clean up potential markdown if model used it despite constraints
+            # Clean up potential markdown or prose if model used it despite constraints
             if "```json" in raw_text:
                 raw_text = raw_text.split("```json")[1].split("```")[0].strip()
             elif "```" in raw_text:
                 raw_text = raw_text.split("```")[1].split("```")[0].strip()
+            
+            # Remove any trailing commas or stray characters that prevent valid JSON
+            raw_text = raw_text.strip()
+            if raw_text.startswith('[') and not raw_text.endswith(']'):
+                # Attempt to close a truncated list
+                 raw_text += ']'
                 
-            data = json.loads(raw_text)
+            try:
+                data = json.loads(raw_text)
+            except json.JSONDecodeError:
+                # If it's a list but failed, try basic regex-based cleaning
+                import re
+                raw_text = re.sub(r'//.*', '', raw_text) # Remove comments
+                data = json.loads(raw_text)
+
             if not isinstance(data, list):
                 print(f"[!] [DEBUG] Expected list from LLM, got {type(data)}")
                 return []
 
             units = []
             for i, item in enumerate(data):
+                # Robust year parsing
+                pub_year = item.get("published_year", 2024)
+                try:
+                    pub_year = int(pub_year)
+                except (ValueError, TypeError):
+                    pub_year = 2024
+
                 units.append(
                     EvidenceUnit(
-                        evidence_id=f"ev_gen_{i}_{hash(item.get('title', str(i)))}",
+                        evidence_id=f"ev_gen_{i}_{abs(hash(item.get('title', str(i))))}",
                         source_type=SourceType(item.get("source_type", "news")),
                         title=item.get("title", "Untitled Source"),
                         source_name=item.get("source_name", "Unknown Source"),
-                        published_year=item.get("published_year", 2024),
+                        published_year=pub_year,
                         url=item.get("url"),
                         sector=sector,
                         geography=geography,
