@@ -38,17 +38,23 @@ class Storage:
         with self.analyses_file.open("w") as f:
             json.dump([a.dict() for a in self.analyses], f, indent=2)
 
-    def get_all_analyses(self) -> List[AnalysisResponse]:
-        return self.analyses
+    def get_all_analyses(self, user_id: Optional[str] = None) -> List[AnalysisResponse]:
+        if not user_id:
+            return self.analyses
+        return [a for a in self.analyses if a.user_id == user_id]
 
-    def get_analysis_by_id(self, analysis_id: str) -> Optional[AnalysisResponse]:
-        return next(
+    def get_analysis_by_id(self, analysis_id: str, user_id: Optional[str] = None) -> Optional[AnalysisResponse]:
+        analysis = next(
             (a for a in self.analyses if a.analysis_id == analysis_id),
             None,
         )
+        if analysis and user_id and analysis.user_id != user_id:
+            return None
+        return analysis
 
-    def get_stats(self) -> Dict:
-        total = len(self.analyses)
+    def get_stats(self, user_id: Optional[str] = None) -> Dict:
+        user_analyses = self.get_all_analyses(user_id)
+        total = len(user_analyses)
 
         if total == 0:
             return {
@@ -58,9 +64,9 @@ class Storage:
                 "avg_score": "0%",
             }
 
-        total_investors = sum(len(a.recommended_investors) for a in self.analyses)
-        total_evidence = sum(len(a.evidence_used) for a in self.analyses)
-        avg_score = sum(a.overall_score for a in self.analyses) / total
+        total_investors = sum(len(a.recommended_investors) for a in user_analyses)
+        total_evidence = sum(len(a.evidence_used) for a in user_analyses)
+        avg_score = sum(a.overall_score for a in user_analyses) / total
 
         return {
             "total_analyses": total,
@@ -69,11 +75,13 @@ class Storage:
             "avg_score": f"{int(avg_score)}%",
         }
 
-    def get_all_evidence(self) -> List[Dict]:
+    def get_all_evidence(self, user_id: Optional[str] = None) -> List[Dict]:
         seen_titles = set()
         all_ev = []
+        
+        user_analyses = self.get_all_analyses(user_id)
 
-        for a in self.analyses:
+        for a in user_analyses:
             for ev in a.evidence_used:
                 if ev.title not in seen_titles:
                     all_ev.append(ev.dict())

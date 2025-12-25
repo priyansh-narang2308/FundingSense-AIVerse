@@ -27,27 +27,27 @@ async def analyze_funding_fit(
 
 
 @router.get("/stats", response_model=Dict)
-async def get_stats():
+async def get_stats(user_id: str = None):
     # for stats returning
-    return storage.get_stats()
+    return storage.get_stats(user_id)
 
 
 @router.get("/history", response_model=List[AnalysisResponse])
-async def get_history():
+async def get_history(user_id: str = None):
     # recent anaylzusiis
-    return storage.get_all_analyses()
+    return storage.get_all_analyses(user_id)
 
 
 @router.get("/analyses/{analysis_id}", response_model=AnalysisResponse)
-async def get_analysis(analysis_id: str):
+async def get_analysis(analysis_id: str, user_id: str = None):
     # specifix analsiss
-    analysis = storage.get_analysis_by_id(analysis_id)
+    analysis = storage.get_analysis_by_id(analysis_id, user_id)
     if not analysis:
         raise HTTPException(status_code=404, detail="Analysis not found")
     return analysis
 
 
 @router.get("/evidence", response_model=List[Dict])
-async def get_all_evidence():
+async def get_all_evidence(user_id: str = None):
     # unique evidenrces
-    return storage.get_all_evidence()
+    return storage.get_all_evidence(user_id)

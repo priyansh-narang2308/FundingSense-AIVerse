@@ -20,6 +20,7 @@ class AnalysisRequest(BaseModel):
     )
     geography: str = Field(..., description="Target market geography")
     language: str = Field("en", description="Response language (e.g., en, hi)")
+    user_id: Optional[str] = Field(None, description="The ID of the user performing the analysis")
 
 
 class InvestorRecommendation(BaseModel):
@@ -43,6 +44,7 @@ class AnalysisResponse(BaseModel):
 
     # defines the shape of the analysis output.
     analysis_id: str
+    user_id: Optional[str] = None
     startup_summary: str
     confidence_indicator: ConfidenceLevel
     overall_score: int = Field(..., ge=0, le=100)

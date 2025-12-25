@@ -71,14 +71,33 @@ class Generator:
     def _generate_mock_fallback(
         self, reasoning_result: ReasoningResult, language: str
     ) -> Dict:
+        # Basic translations for demonstration if API fails
+        summaries = {
+            "hi": "बाजार, नियामक और वित्तीय मापदंडों में प्रारंभिक विश्लेषण किया गया।",
+            "en": "Initial analysis performed across market, regulatory, and financial parameters.",
+        }
+        
+        explanation_prefix = {
+            "hi": "प्रत्यक्ष साक्ष्य मिलान के आधार पर रिपोर्ट तैयार की गई।",
+            "en": "Report generated based on direct evidence matches.",
+        }
+
         return {
-            "executive_summary": "Initial analysis performed across market, regulatory, and financial parameters.",
+            "executive_summary": summaries.get(language, summaries["en"]),
             "why_this_fits": reasoning_result.supported_claims,
             "why_this_does_not_fit": [
-                f"Insufficient evidence for: {c}"
+                (f"Insufficient evidence for: {c}" if language == "en" else f"इसके लिए अपर्याप्त साक्ष्य: {c}")
                 for c in reasoning_result.rejected_claims
             ],
-            "confidence_explanation": f"Report generated with {reasoning_result.confidence_level} confidence based on direct evidence matches.",
+            "recommended_investors": [
+                {
+                    "name": "General VC Fund",
+                    "fit_score": 70,
+                    "reasons": ["Strategic match" if language == "en" else "रणनीतिक मिलान"],
+                    "focus_areas": ["Technology"]
+                }
+            ],
+            "confidence_explanation": f"{explanation_prefix.get(language, explanation_prefix['en'])} (Confidence: {reasoning_result.confidence_level})",
         }
 
     async def generate_explanation(self, validated_data: dict, language: str) -> str:

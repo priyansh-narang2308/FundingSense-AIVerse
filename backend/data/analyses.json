@@ -1,6 +1,7 @@
 [
   {
     "analysis_id": "391d0994-76bb-48ee-a019-8f536e3c38af",
+    "user_id": null,
     "startup_summary": "Initial analysis performed across market, regulatory, and financial parameters.",
     "confidence_indicator": "low",
     "overall_score": 65,
@@ -35,6 +36,7 @@
   },
   {
     "analysis_id": "8e128bfd-ac8c-4cc4-899d-5ecba04856fa",
+    "user_id": null,
     "startup_summary": "Initial analysis performed across market, regulatory, and financial parameters.",
     "confidence_indicator": "high",
     "overall_score": 75,
@@ -362,6 +364,7 @@
   },
   {
     "analysis_id": "5e2d7939-5f2d-4624-831a-2dff7789d08c",
+    "user_id": null,
     "startup_summary": "Initial analysis performed across market, regulatory, and financial parameters.",
     "confidence_indicator": "high",
     "overall_score": 75,
@@ -689,6 +692,7 @@
   },
   {
     "analysis_id": "e822c097-e7dc-469a-82d7-f87d271b0149",
+    "user_id": null,
     "startup_summary": "The healthcare and life sciences sector in India presents a compelling investment opportunity, characterized by high growth momentum, favorable regulatory tailwinds, and predictable exit multiples for pre-seed investments. The Ayushman Bharat Digital Mission (ABDM) policy, coupled with increasing investor interest in AI-driven healthcare solutions for Tier 2 and Tier 3 cities, creates a favorable environment for early-stage ventures.",
     "confidence_indicator": "high",
     "overall_score": 100,
@@ -851,6 +855,7 @@
   },
   {
     "analysis_id": "ec9fccb0-6242-477e-b3c6-a1d4a84ac3c4",
+    "user_id": null,
     "startup_summary": "Based on the provided evidence, the startup demonstrates a strong fit for pre-seed investment, particularly within the Indian Healthcare AI and Deep Tech sectors. While the evidence suggests general positive trends in these areas, claims of high growth momentum, favorable regulatory conditions, and predictable exit multiples are not supported, resulting in a low confidence level. There are multiple investors active in the pre-seed space in India across Healthcare, AI, and Deep Tech.",
     "confidence_indicator": "low",
     "overall_score": 25,
@@ -981,6 +986,7 @@
   },
   {
     "analysis_id": "6f0eb11e-fe4c-4fd8-b64c-60436ab86d8a",
+    "user_id": null,
     "startup_summary": "The analysis indicates a strong fit for pre-seed stage startups, particularly those leveraging AI. While there's significant funding activity in the Indian healthcare AI sector, the data refutes claims of high growth momentum, favorable regulatory tailwinds, and predictable exit multiples specifically within the healthcare and life sciences domain for pre-seed companies.",
     "confidence_indicator": "low",
     "overall_score": 25,
@@ -1110,6 +1116,7 @@
   },
   {
     "analysis_id": "b3c6511c-1c53-40e0-9fd5-5e9e84eafa7f",
+    "user_id": null,
     "startup_summary": "Based on the provided evidence, the startup exhibits a strong fit for Seed-stage investors, particularly those focused on deep tech and AI in India. However, there is insufficient support for claims related to high growth momentum in Financial Services & FinTech for the India - Tier 2/3 Cities market, favorable regulatory tailwinds in that specific sector/geography, and predictable exit multiples for Seed-stage FinTech startups. The analysis is based on limited evidence and the confidence level is low.",
     "confidence_indicator": "low",
     "overall_score": 25,
@@ -1229,6 +1236,7 @@
   },
   {
     "analysis_id": "1d6a622b-978e-4ac5-907d-9b6ae3123ea2",
+    "user_id": null,
     "startup_summary": "The funding analysis indicates active investor interest in the FinTech space in India, particularly in early-stage ventures, although seed funding has seen a recent decline. Deep tech and AI are also emerging as attractive sectors for investment. The analysis is based on a limited set of evidence, leading to low confidence.",
     "confidence_indicator": "low",
     "overall_score": 60,
@@ -1353,6 +1361,7 @@
   },
   {
     "analysis_id": "9ff99ea3-77f1-4fd8-9de3-288663aeac79",
+    "user_id": null,
     "startup_summary": "Based on the provided evidence, there is validated active investor interest in the Indian AI and deep tech sectors. Specifically, funds like Speciale Invest, Pi Ventures, Ankur Capital, IvyCap Ventures, Boundless Ventures and Capital A are actively investing in early-stage deep tech and AI startups in India. Accel India and Sequoia India have also invested in the healthcare AI space. The extension of the Startup India tax holiday provides a favorable financial environment for early-stage startups with high R&D costs. However, broader market growth, regulatory support, seed capital availability, and ecosystem maturity claims for Financial Services & FinTech in India were rejected indicating they are not supported by the provided data.",
     "confidence_indicator": "low",
     "overall_score": 62,
@@ -1475,6 +1484,7 @@
   },
   {
     "analysis_id": "044a90cc-9bd1-4d26-aa45-84fc21f3d824",
+    "user_id": null,
     "startup_summary": "The Indian FinTech sector presents a compelling investment landscape, particularly for early-stage ventures. Market growth and investor interest are strong, with a mature ecosystem supporting FinTech startups across India. While overall FinTech funding is robust, seed-stage deals have seen a decline, indicating a preference for more established models. This analysis identifies key investors active in the Indian FinTech space, aligning with the startup's profile and stage. Investment into AI applications into the Healthcare sector is growing, presenting a viable option for startups.",
     "confidence_indicator": "high",
     "overall_score": 81,
@@ -1619,6 +1629,237 @@
       "stage": "Pre-Seed",
       "geography": "India - Pan India",
       "raw_support_ratio": 0.8
+    }
+  },
+  {
+    "analysis_id": "a256f8e1-40bb-443f-b171-36c408a58d69",
+    "user_id": null,
+    "startup_summary": "Based on the available evidence, a definitive funding analysis and investment recommendation cannot be made. The supported claims are absent, suggesting a lack of positive indicators. Conversely, the rejected claims indicate concerns regarding market growth, regulatory support, availability of pre-seed capital, investor interest, and ecosystem maturity specifically within the E-Commerce & Retail sector in Indian metro cities. Consequently, a 'low' confidence level is assigned to any potential investment decision at this time.",
+    "confidence_indicator": "low",
+    "overall_score": 24,
+    "recommended_investors": [
+      {
+        "name": "Sequoia Capital India",
+        "fit_score": 40,
+        "logo_initials": "SCI",
+        "focus_areas": [
+          "Technology",
+          "Consumer",
+          "Healthcare"
+        ],
+        "reasons": [
+          "Known to invest in early-stage startups in India.",
+          "Has a broad investment mandate and might consider opportunities despite reservations.",
+          "Potentially interested if the startup demonstrates a unique approach to overcoming the identified challenges."
+        ]
+      },
+      {
+        "name": "Accel India",
+        "fit_score": 35,
+        "logo_initials": "AI",
+        "focus_areas": [
+          "Software",
+          "Mobile",
+          "Consumer Internet",
+          "Healthcare IT"
+        ],
+        "reasons": [
+          "Invests in early-stage companies in India.",
+          "May be interested in disruptive models within E-Commerce & Retail.",
+          "Could be a fit if the team has a strong background and vision."
+        ]
+      },
+      {
+        "name": "Blume Ventures",
+        "fit_score": 30,
+        "logo_initials": "BV",
+        "focus_areas": [
+          "Technology",
+          "Consumer Internet",
+          "SaaS"
+        ],
+        "reasons": [
+          "Focuses on pre-seed and seed-stage investments in India.",
+          "Might be willing to take a risk on a promising team in a challenging market.",
+          "Potentially aligned if the startup has a strong technology component."
+        ]
+      }
+    ],
+    "why_fits": [],
+    "why_does_not_fit": [
+      "Market growth and demand for E-Commerce & Retail in India - Metro Cities is questionable.",
+      "Regulatory framework and policy support in India - Metro Cities is lacking.",
+      "Availability of Pre-Seed capital for E-Commerce & Retail startups is limited.",
+      "Active investor interest and thesis alignment is unconfirmed.",
+      "Ecosystem maturity for E-Commerce & Retail startups in India - Metro Cities is underdeveloped."
+    ],
+    "evidence_used": [],
+    "created_at": "2025-12-25T19:52:10.240751",
+    "metadata": {
+      "language": "hi",
+      "engine_version": "1.0.0-rag-decision-centric",
+      "evidence_count": 0,
+      "sector": "E-Commerce & Retail",
+      "stage": "Pre-Seed",
+      "geography": "India - Metro Cities",
+      "raw_support_ratio": 0.0
+    }
+  },
+  {
+    "analysis_id": "9ed2c3ce-8351-408b-955c-580e85c229ac",
+    "user_id": "d1912531-4684-4ea7-b3b4-9ba6382bcb71",
+    "startup_summary": "The Indian market presents a compelling investment opportunity for Enterprise Software & SaaS startups, driven by significant market growth, supportive regulatory policies, availability of seed capital, and active investor interest. This analysis highlights key investors and market dynamics pertinent to early-stage funding within this sector in India.",
+    "confidence_indicator": "high",
+    "overall_score": 86,
+    "recommended_investors": [
+      {
+        "name": "Blume Ventures",
+        "fit_score": 90,
+        "logo_initials": "BV",
+        "focus_areas": [
+          "FinTech",
+          "SaaS",
+          "Healthcare",
+          "Life Sciences"
+        ],
+        "reasons": [
+          "Announced 58 deals in 2024, with a heavy skew toward FinTech and SaaS.",
+          "Actively invests in early-stage healthcare and lifesciences.",
+          "Consistent deal flow in the Indian market."
+        ]
+      },
+      {
+        "name": "Peak XV Partners",
+        "fit_score": 85,
+        "logo_initials": "PXP",
+        "focus_areas": [
+          "FinTech",
+          "SaaS",
+          "Technology"
+        ],
+        "reasons": [
+          "Remains the most active lead investor in the region, demonstrating strong market conviction.",
+          "Active investor in the Indian fintech sector."
+        ]
+      },
+      {
+        "name": "Nexus Venture Partners",
+        "fit_score": 80,
+        "logo_initials": "NVP",
+        "focus_areas": [
+          "FinTech",
+          "SaaS",
+          "Technology"
+        ],
+        "reasons": [
+          "Participated in a $25.5 million seed round for Zinc Money, indicating interest in early-stage fintech.",
+          "Established presence and investment history in the Indian venture landscape."
+        ]
+      },
+      {
+        "name": "Speciale Invest",
+        "fit_score": 75,
+        "logo_initials": "SI",
+        "focus_areas": [
+          "Deep Tech",
+          "AI",
+          "Climate Tech"
+        ],
+        "reasons": [
+          "Premier seed-stage VC for deeptech, space-tech, and climate-tech in India.",
+          "Focuses on high-IP startups, potentially aligning with innovative SaaS solutions."
+        ]
+      },
+      {
+        "name": "Accel India",
+        "fit_score": 70,
+        "logo_initials": "AI",
+        "focus_areas": [
+          "Healthcare AI",
+          "SaaS",
+          "Technology"
+        ],
+        "reasons": [
+          "Active investor in the Indian healthcare AI sector.",
+          "Experience in funding early-stage startups in India."
+        ]
+      }
+    ],
+    "why_fits": [
+      "Market growth and demand for Enterprise Software & SaaS in India - Pan India",
+      "Regulatory framework and policy support in India - Pan India",
+      "Availability of Seed capital for Enterprise Software & SaaS startups",
+      "Active investor interest and thesis alignment",
+      "Ecosystem maturity for Enterprise Software & SaaS startups in India - Pan India"
+    ],
+    "why_does_not_fit": [],
+    "evidence_used": [
+      {
+        "source_type": "news",
+        "title": "India FinTech Funding & Venture Landscape 2024",
+        "source_name": "Tracxn / YourStory Research",
+        "year": "2024",
+        "url": "https://tracxn.com",
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "news",
+        "title": "India Healthcare & HealthTech VC Landscape 2024",
+        "source_name": "Market Intelligence Report",
+        "year": "2024",
+        "url": "https://digitalhealthnews.com",
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "dataset",
+        "title": "Deep Tech & AI Startup Funding India 2024",
+        "source_name": "Inc42 / GrowthJockey",
+        "year": "2024",
+        "url": "https://inc42.com",
+        "usage_reason": "valuation"
+      },
+      {
+        "source_type": "dataset",
+        "title": "2024 SaaS Valuation Multiples by Region",
+        "source_name": "Crunchbase Global Insights",
+        "year": "2024",
+        "url": null,
+        "usage_reason": "valuation"
+      },
+      {
+        "source_type": "news",
+        "title": "Healthcare AI Funding Hits Record $2.3B in India",
+        "source_name": "Economic Times",
+        "year": "2023",
+        "url": null,
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "news",
+        "title": "Startup India Tax Holiday Extended for 2024",
+        "source_name": "Economic Times",
+        "year": "2024",
+        "url": null,
+        "usage_reason": "policy-impact"
+      },
+      {
+        "source_type": "policy",
+        "title": "Digital Payment Framework Update 2024",
+        "source_name": "SEBI (Securities and Exchange Board of India)",
+        "year": "2024",
+        "url": null,
+        "usage_reason": "regulation"
+      }
+    ],
+    "created_at": "2025-12-25T20:07:31.572271",
+    "metadata": {
+      "language": "hi",
+      "engine_version": "1.0.0-rag-decision-centric",
+      "evidence_count": 7,
+      "sector": "Enterprise Software & SaaS",
+      "stage": "Seed",
+      "geography": "India - Pan India",
+      "raw_support_ratio": 1.0
     }
   }
 ]

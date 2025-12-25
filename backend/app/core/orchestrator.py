@@ -92,6 +92,7 @@ class AnalysisOrchestrator:
 
         return AnalysisResponse(
             analysis_id=str(uuid.uuid4()),
+            user_id=request.user_id,
             startup_summary=report.get(
                 "executive_summary", f"Analysis for {request.sector} startup."
             ),

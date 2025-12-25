@@ -8,18 +8,22 @@ from app.config.settings import settings
 
 class EvidenceStore:
     def __init__(self, persist_directory: str = "db"):
-        self.client = chromadb.PersistentClient(path=persist_directory)
+        try:
+            self.client = chromadb.PersistentClient(path=persist_directory)
 
-        if settings.GOOGLE_API_KEY:
-            self.emb_fn = embedding_functions.GoogleGenerativeAiEmbeddingFunction(
-                api_key=settings.GOOGLE_API_KEY, model_name="models/embedding-001"
+            if settings.GOOGLE_API_KEY:
+                self.emb_fn = embedding_functions.GoogleGenerativeAiEmbeddingFunction(
+                    api_key=settings.GOOGLE_API_KEY, model_name="models/embedding-001"
+                )
+            else:
+                self.emb_fn = embedding_functions.DefaultEmbeddingFunction()
+
+            self.collection = self.client.get_or_create_collection(
+                name="funding_evidence", embedding_function=self.emb_fn
             )
-        else:
-            self.emb_fn = embedding_functions.DefaultEmbeddingFunction()
-
-        self.collection = self.client.get_or_create_collection(
-            name="funding_evidence", embedding_function=self.emb_fn
-        )
+        except Exception as e:
+            print(f"[!] ChromaDB initialization failed: {e}")
+            raise e
 
     def save_evidence(self, evidence: EvidenceUnit):
 

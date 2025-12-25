@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
 
     GOOGLE_API_KEY: Optional[str] = None
+    ENABLE_VECTOR_DB: bool = False
 
     ALLOWED_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
 
