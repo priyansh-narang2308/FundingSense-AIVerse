@@ -2143,5 +2143,167 @@
       "geography": "India - Metro Cities",
       "raw_support_ratio": 0.4
     }
+  },
+  {
+    "analysis_id": "6509b847-5f81-4917-b165-16b3a35b0695",
+    "user_id": "5538cc94-3c29-4e7c-9c70-b8d1043ed2fb",
+    "startup_summary": "The analysis indicates moderate investor interest in AI-powered logistics and supply chain startups in India's metro cities. While specific deal sizes are decreasing, overall funding in GenAI is increasing, suggesting a potentially favorable but competitive funding environment. Government initiatives like the National Logistics Policy also support the sector.",
+    "confidence_indicator": "low",
+    "overall_score": 61,
+    "recommended_investors": [
+      {
+        "name": "Enrission India Capital",
+        "fit_score": 85,
+        "logo_initials": "EIC",
+        "focus_areas": [
+          "Logistics Tech",
+          "AI",
+          "Early-Stage Investments",
+          "India"
+        ],
+        "reasons": [
+          "Led a $4 million funding round for Stackbox, an AI-powered logistics startup (ev_gen_2_6802920035775039459).",
+          "Demonstrated interest in early-stage logistics tech companies in India."
+        ]
+      },
+      {
+        "name": "Axilor Ventures",
+        "fit_score": 80,
+        "logo_initials": "AV",
+        "focus_areas": [
+          "Logistics Tech",
+          "AI",
+          "Early-Stage Investments",
+          "India"
+        ],
+        "reasons": [
+          "Participated in QuickShift's \u20b922 crore pre-Series A funding round (ev_gen_4_4160610939408505568).",
+          "Focuses on early-stage investments in technology-driven startups in India."
+        ]
+      },
+      {
+        "name": "Atomic Capital",
+        "fit_score": 75,
+        "logo_initials": "AC",
+        "focus_areas": [
+          "Logistics Tech",
+          "AI",
+          "Pre-Series A",
+          "India"
+        ],
+        "reasons": [
+          "Led QuickShift's \u20b922 crore pre-Series A funding round (ev_gen_4_4160610939408505568).",
+          "Shows interest in AI-driven logistics solutions."
+        ]
+      },
+      {
+        "name": "Ecosystem Ventures",
+        "fit_score": 70,
+        "logo_initials": "EV",
+        "focus_areas": [
+          "Logistics Tech",
+          "AI",
+          "Seed Stage",
+          "India"
+        ],
+        "reasons": [
+          "Participated in a $1.2 million seed round for Stackbox in August 2021 (ev_gen_2_6802920035775039459).",
+          "Focuses on seed-stage investments in Indian startups."
+        ]
+      },
+      {
+        "name": "Tiger Global",
+        "fit_score": 60,
+        "logo_initials": "TG",
+        "focus_areas": [
+          "Growth Stage",
+          "Technology",
+          "India",
+          "Logistics"
+        ],
+        "reasons": [
+          "Known for large investments in tech startups and has an appetite for high-growth markets like India.",
+          "Has invested in similar tech-enabled logistics companies globally.",
+          "Could be interested in later-stage rounds given the overall market growth."
+        ]
+      }
+    ],
+    "why_fits": [
+      "Stackbox, a logistics technology startup utilizing AI-powered WMS and TMS, successfully raised $4 million from Enrission India Capital and Ecosystem Ventures (ev_gen_2_6802920035775039459).",
+      "QuickShift secured \u20b922 crore (approximately $2.6 million USD) in pre-Series A funding led by Atomic Capital, with participation from Axilor Ventures, to enhance its AI-driven fulfillment platform (ev_gen_4_4160610939408505568).",
+      "The National Logistics Policy (NLP) aims to decrease logistics costs and streamline operations through digitization and infrastructure development (ev_gen_0_4716244074882568777)."
+    ],
+    "why_does_not_fit": [
+      "Although the India inventory management software market is growing, the average deal size in GenAI funding has decreased from $15 million to $11.8 million in 2024 (ev_gen_5_7367725727597310537).",
+      "While the National Logistics Policy exists, the evidence does not provide concrete details on specific regulatory support or incentives currently available, only future intentions (ev_gen_0_4716244074882568777)."
+    ],
+    "evidence_used": [
+      {
+        "source_type": "policy",
+        "title": "National Logistics Policy: Implications for Businesses [2025]",
+        "source_name": "WareIQ",
+        "year": "2024",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5Py8Fmf4V7viY63HOBgr4gzfMM89LIItHADRyG1Eb2xruEpbVSCyNsJXUoKHzTmvelYFMswPN4S-85lskwzSJqQV_5q8hcQr3nGqzvBO9D1uROihAzSYLJEgoqahZiVefbc9ZZUBFYPLqwLrR335zOI4pmAvF5Rs=",
+        "usage_reason": "government policy"
+      },
+      {
+        "source_type": "dataset",
+        "title": "India Inventory Management Software Market Size & Outlook, 2033 - Grand View Research",
+        "source_name": "Grand View Research",
+        "year": "2024",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWzvdnL3FohGEKqt9IO6E4HAXMHMu1G9Zb4RfMHICGS7jQ6DDqnpwv283cFLL3znkbFbJOvKvWIfyHs5Y1Gqa3Sr-YdeNht8jN_Kf9fWAHUtP5fjdYeVa5d6Uwf91lJMtaIy1aNgDj1j2cmgWJ5Gt4H_wq9namp8XcKIfk6F0yV4fcaj4mQHgs78qjJ8qITr-LAPrS3vNV",
+        "usage_reason": "market size"
+      },
+      {
+        "source_type": "news",
+        "title": "AI-Powered Logistics Startup Stackbox Secures $4 Million to Fuel Asia Expansion",
+        "source_name": "Indian Startup Times",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx1ydzewrojcIwr8Fz4h26Muuhks5VoMORb3oIEhEruiKMdPNG3fi0XKpBpDxbmfykgB6tzMgRqor-e-PeI6NAccKW23Ngs0HdoMEO9Xc-rNy-47xShQIk1BrzwND53hpNl_tAMB7sja7XZEvko-84u24aMIUYprOaXC_jadTQOQiEnSQ--ce9FpIEYbaZQMAdFcFqo2OENBhu_x1kN63NA7ynS_CBTc8DI2f9IZNDZjVGPCJ5CK4I",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "news",
+        "title": "Top 10 Best Inventory Management Software in India (2026)",
+        "source_name": "Unicommerce",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHKgb6JWURlW-dLOSBtCDtJhzRRrrhoLWYoKkdZTkWs308oQbTQqsOD0TPttwIlvCKxtlyFCoh8U1HmRZYJ0dW6QfTv-0vvL5_2sz3dQUsrmCc3MQIvGL58dusRL6Zh3-QaKdLIz8t2fZIZM2SWh8aiAJQlo92SbPPoI8aE1KeFGda454=",
+        "usage_reason": "inventory management software"
+      },
+      {
+        "source_type": "news",
+        "title": "Secret Funding Revealed: \u20b922 Crore Injection for India's AI Logistics Game-Changer!",
+        "source_name": "Whalesbook",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoXsgLLCIqoHZUfvDr5ZsBZdZhfMbXs1NMZSLgQToPqPtg2clGDR8x9-41URgnlm9FYJFW0VFZQO2AjCCC0sa74Vd154q_wLcICWnuKiBXPfuYOeHcAgCLh3bXR22_wtrpKNiKJHOa1zOLNtvVTXB8RaN2Fp28JQSDB4OeSd5qDwVrTZNKcXT8JCAoekGwbOGiIdTIRVnuI3nBW0dIJX3X3oFbJGWV-LhQgnAGdj49aTyOe_14Vpj1HlsXjw5oSlrdeR01QHvjYVE4_UsymZK0FZsJbSEDkH4rBuMIp1eYeih9zw==",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "news",
+        "title": "Gen AI funding in India rises to $400 million in 2024",
+        "source_name": "The Financial Express",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4NbhUuy_VAY8TRu7u_ndoeNi9B8mTrG_UAPk8faC52yyyhOq9dft0_BdrlCrlp4M6a497uDFUlptc6fakQPX1ychTd9v5v2z2BLr9BkZtnfknM0Tm4z9B6bgXRc8_lXeMb33Bj-HGEL9KqEWuNqakyFKcwB-nCf18JxVQ54-Jg-O2fxBrvK_pYrni7XSt_2mXHVjPyAjqIKGI3Uq6YKHL4lBl1BUAEjn1",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "news",
+        "title": "India AI in Logistics Market Size, Share, Demand & Forecast 2032 - Markets and Data",
+        "source_name": "Markets and Data",
+        "year": "2024",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkFZ7vaw_gWKHW6l0gWAIzzOWj2tbQPyZh_XVWrlV-l-Pi-dBtOkBU8WgjfHrXqEFKOZ4nqzCwvBUWxdjTveO0gDvFyI2_liLjYcdiGZh550mgqnZigSTO6Uje8BbIl_O5rHE-DbTuExBr3AWh_6Jpy4ZntkB5ZNsMOhRNzb7z7XDdFrfB3A==",
+        "usage_reason": "AI in logistics"
+      }
+    ],
+    "created_at": "2025-12-25T18:35:06.300237Z",
+    "metadata": {
+      "language": "en",
+      "engine_version": "1.0.0-rag-decision-centric",
+      "evidence_count": 7,
+      "sector": "Logistics & Supply Chain",
+      "stage": "Seed",
+      "geography": "India - Metro Cities",
+      "raw_support_ratio": 0.4
+    }
   }
 ]
