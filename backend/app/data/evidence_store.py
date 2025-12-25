@@ -44,3 +44,41 @@ class EvidenceStore:
             documents=[evidence.content],
             metadatas=[metadata],
         )
+
+    def query_evidence(self, query_text: str, n_results: int = 5) -> List[EvidenceUnit]:
+        
+        #search for evidence using semantic similarity.
+
+        results = self.collection.query(query_texts=[query_text], n_results=n_results)
+
+        evidence_units = []
+        if not results["ids"] or not results["ids"][0]:
+            return []
+
+        for i in range(len(results["ids"][0])):
+            meta = results["metadatas"][0][i]
+            evidence_units.append(
+                EvidenceUnit(
+                    evidence_id=results["ids"][0][i],
+                    source_type=SourceType(meta.get("source_type", "news")),
+                    title=meta.get("title", "Untitled"),
+                    source_name=meta.get("source_name", "Unknown"),
+                    published_year=int(meta.get("published_year", 2024)),
+                    url=meta.get("url"),
+                    sector=meta.get("sector", "General"),
+                    geography=meta.get("geography", "Global"),
+                    investors=(
+                        meta.get("investors", "").split(",")
+                        if meta.get("investors")
+                        else []
+                    ),
+                    content=results["documents"][0][i],
+                    usage_tags=[meta.get("source_type", "evidence-store")],
+                )
+            )
+
+        return evidence_units
+
+    def list_all_evidence(self) -> List[EvidenceUnit]:
+
+        return []
