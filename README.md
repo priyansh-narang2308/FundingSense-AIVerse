@@ -1,33 +1,26 @@
-# 🚀 FundingSense: The AI-Driven Funding Intelligence Platform
+# FundingSense: The AI-Driven Funding Intelligence Platform
 
 **FundingSense** is a state-of-the-art, evidence-backed decision intelligence platform designed to bridge the gap between startups and investors. By leveraging a sophisticated **Retriever-Augmented Generation (RAG)** pipeline and **Google Gemini 2.0 Flash**, it provides founders with deep, verifiable insights into their funding readiness.
 
-![FundingSense Overview](https://img.shields.io/badge/AI-Gemini%202.0%20Flash-blueviolet?style=for-the-badge)
-![RAG](https://img.shields.io/badge/RAG-Enabled-success?style=for-the-badge)
-![Multilingual](https://img.shields.io/badge/Supports-8%20Languages-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+## Key Features
 
----
-
-## 🌟 Key Features
-
-### 🔍 Real-World Evidence Retrieval (Live Web Search)
+### Real-World Evidence Retrieval (Live Web Search)
 Unlike traditional AI tools that rely on stale training data, FundingSense uses **Gemini 2.0 Web Search Grounding**. It crawls 2024-2025 news, policy documents, and venture databases in real-time to find:
 - Actual active investors (Peak XV, Blume, Accel, etc.).
 - Recent funding rounds and market trends.
 - Up-to-date government policies and regulatory changes.
 
-### 🇮🇳 Bharat-First Multilingual UI
+### Bharat-First Multilingual UI
 FundingSense is built for the diverse Indian startup ecosystem, supporting **English + 7 major Indian languages**:
 - **Hindi (हिंदी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, **Telugu (తెలుగు)**, **Marathi (मराठी)**, **Gujarati (ગુજરાતી)**, and **Kannada (ಕನ್ನಡ)**.
 - **Dynamic AI Translation**: Historical summaries and real-time insights are automatically translated into your preferred language using our custom-built AI translation engine.
 
-### 📊 Deep Funding Fit Analysis
+### Deep Funding Fit Analysis
 - **Fit Score & Confidence**: Proprietary scoring algorithm that calculates the alignment between your startup and current market sentiment.
 - **Why This Fits/Does Not Fit**: Bulleted, evidence-backed reasons explaining the AI's reasoning.
 - **Recommended Investors**: A curated list of 3-5 VCs with specific reasons for their match.
 
-### 📁 Evidence Vault
+### Evidence Vault
 Every analysis is backed by an "Evidence Vault" containing:
 - **News articles** with direct URLs.
 - **Policy documents** and datasets.
@@ -35,7 +28,7 @@ Every analysis is backed by an "Evidence Vault" containing:
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 FundingSense uses a modern, distributed architecture:
 
@@ -57,7 +50,7 @@ FundingSense uses a modern, distributed architecture:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.10+
