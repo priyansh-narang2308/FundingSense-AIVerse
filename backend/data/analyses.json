@@ -1861,5 +1861,287 @@
       "geography": "India - Pan India",
       "raw_support_ratio": 1.0
     }
+  },
+  {
+    "analysis_id": "211b3d65-1859-416f-a0fc-cafaad5e2a18",
+    "user_id": "d1912531-4684-4ea7-b3b4-9ba6382bcb71",
+    "startup_summary": "The Indian Healthcare & Life Sciences sector presents a compelling investment landscape, characterized by substantial market growth, regulatory support, and active investor interest, particularly at the seed and early stages. The extension of tax holidays and streamlined licensing procedures further enhances the attractiveness of Indian startups in this domain.",
+    "confidence_indicator": "high",
+    "overall_score": 89,
+    "recommended_investors": [
+      {
+        "name": "Inflection Point Ventures",
+        "fit_score": 95,
+        "logo_initials": "IPV",
+        "focus_areas": [
+          "Healthcare",
+          "HealthTech",
+          "Seed Stage Investments"
+        ],
+        "reasons": [
+          "Led a $700K seed round for Neuranics in the Healthcare sector.",
+          "Actively investing in early-stage healthcare and lifesciences."
+        ]
+      },
+      {
+        "name": "Endiya Partners",
+        "fit_score": 90,
+        "logo_initials": "EP",
+        "focus_areas": [
+          "Healthcare",
+          "Life Sciences",
+          "Early-Stage Investments"
+        ],
+        "reasons": [
+          "Actively funding early-stage healthcare and lifesciences startups in India."
+        ]
+      },
+      {
+        "name": "Eximius Ventures",
+        "fit_score": 85,
+        "logo_initials": "EV",
+        "focus_areas": [
+          "HealthTech",
+          "Pre-Seed Investments",
+          "Seed Investments"
+        ],
+        "reasons": [
+          "Focusing on pre-seed and seed HealthTech investments in India."
+        ]
+      },
+      {
+        "name": "Speciale Invest",
+        "fit_score": 80,
+        "logo_initials": "SI",
+        "focus_areas": [
+          "Deep Tech",
+          "Seed Stage Investments",
+          "AI"
+        ],
+        "reasons": [
+          "Premier seed-stage VC for deeptech startups in India, with potential overlap into AI-driven healthcare solutions."
+        ]
+      },
+      {
+        "name": "Kae Capital",
+        "fit_score": 75,
+        "logo_initials": "KC",
+        "focus_areas": [
+          "HealthTech",
+          "Early-Stage Investments"
+        ],
+        "reasons": [
+          "Participating in rounds for high-growth HealthTech companies like Qure.ai."
+        ]
+      }
+    ],
+    "why_fits": [
+      "Market growth and demand for Healthcare & Life Sciences in India - Pan India",
+      "Regulatory framework and policy support in India - Pan India",
+      "Availability of Pre-Seed capital for Healthcare & Life Sciences startups",
+      "Active investor interest and thesis alignment",
+      "Ecosystem maturity for Healthcare & Life Sciences startups in India - Pan India"
+    ],
+    "why_does_not_fit": [],
+    "evidence_used": [
+      {
+        "source_type": "news",
+        "title": "India FinTech Funding & Venture Landscape 2024",
+        "source_name": "Tracxn / YourStory Research",
+        "year": "2024",
+        "url": "https://tracxn.com",
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "news",
+        "title": "India Healthcare & HealthTech VC Landscape 2024",
+        "source_name": "Market Intelligence Report",
+        "year": "2024",
+        "url": "https://digitalhealthnews.com",
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "dataset",
+        "title": "Deep Tech & AI Startup Funding India 2024",
+        "source_name": "Inc42 / GrowthJockey",
+        "year": "2024",
+        "url": "https://inc42.com",
+        "usage_reason": "valuation"
+      },
+      {
+        "source_type": "news",
+        "title": "Healthcare AI Funding Hits Record $2.3B in India",
+        "source_name": "Economic Times",
+        "year": "2023",
+        "url": null,
+        "usage_reason": "market-sizing"
+      },
+      {
+        "source_type": "news",
+        "title": "Startup India Tax Holiday Extended for 2024",
+        "source_name": "Economic Times",
+        "year": "2024",
+        "url": null,
+        "usage_reason": "policy-impact"
+      },
+      {
+        "source_type": "policy",
+        "title": "Digital Payment Framework Update 2024",
+        "source_name": "SEBI (Securities and Exchange Board of India)",
+        "year": "2024",
+        "url": null,
+        "usage_reason": "regulation"
+      }
+    ],
+    "created_at": "2025-12-25T22:17:11.560697",
+    "metadata": {
+      "language": "en",
+      "engine_version": "1.0.0-rag-decision-centric",
+      "evidence_count": 6,
+      "sector": "Healthcare & Life Sciences",
+      "stage": "Pre-Seed",
+      "geography": "India - Pan India",
+      "raw_support_ratio": 1.0
+    }
+  },
+  {
+    "analysis_id": "54cbdb3d-c350-46dd-a659-6086a6a8fb65",
+    "user_id": "d1912531-4684-4ea7-b3b4-9ba6382bcb71",
+    "startup_summary": "The analysis indicates a moderate level of investor interest and thesis alignment in the Indian FinTech sector, specifically within metro cities, as of 2025. While early-stage funding demonstrates resilience, a broad slowdown in overall tech funding necessitates a focus on compliance and sustainable unit economics.",
+    "confidence_indicator": "low",
+    "overall_score": 64,
+    "recommended_investors": [
+      {
+        "name": "Accel",
+        "fit_score": 85,
+        "logo_initials": "A",
+        "focus_areas": [
+          "FinTech",
+          "Early-Stage Investments",
+          "Technology"
+        ],
+        "reasons": [
+          "Identified as a top investor in Indian FinTech based on the number of companies invested in, as of December 2025 (Tracxn).",
+          "Listed as an active investor in India's fintech sector in H1 2025 (IBEF)."
+        ]
+      },
+      {
+        "name": "Bessemer Venture Partners",
+        "fit_score": 75,
+        "logo_initials": "BVP",
+        "focus_areas": [
+          "FinTech",
+          "Venture Capital",
+          "Growth Stage"
+        ],
+        "reasons": [
+          "Recognized as an active investor in India's fintech sector in H1 2025 (IBEF).",
+          "Listed among the investors in the FinTech sector in India (Tracxn)."
+        ]
+      },
+      {
+        "name": "Peak XV Partners",
+        "fit_score": 75,
+        "logo_initials": "PXP",
+        "focus_areas": [
+          "FinTech",
+          "Venture Capital",
+          "Seed Stage"
+        ],
+        "reasons": [
+          "Identified as an active investor in India's fintech sector in H1 2025 (IBEF).",
+          "Listed among the investors in the FinTech sector in India (Tracxn)."
+        ]
+      },
+      {
+        "name": "General Catalyst",
+        "fit_score": 65,
+        "logo_initials": "GC",
+        "focus_areas": [
+          "FinTech",
+          "Venture Capital",
+          "Growth Equity"
+        ],
+        "reasons": [
+          "Listed as an investor in the FinTech sector in India (Tracxn)."
+        ]
+      }
+    ],
+    "why_fits": [
+      "The Indian FinTech sector ranked third globally in H1 2025, raising US$ 889 million, indicating active investor interest. Investors like Accel, Bessemer Venture Partners, and Peak XV are actively investing in the Indian FinTech space (IBEF).",
+      "Tracxn data confirms that FinTech companies in India raised $2.35B in equity funding across 254 rounds up to December 2025, showing a mature ecosystem. Accel is highlighted as the top investor in FinTech companies in India based on the number of companies invested in (Tracxn)."
+    ],
+    "why_does_not_fit": [
+      "While the fintech sector is growing, overall tech startup funding in India fell 17% year-on-year in 2025, indicating potential headwinds (People Matters).",
+      "The evidence shows that while early stage funding is resilient, the sector is moving towards a focus on compliance and AI-led automation due to slowing funding cycles (Entrepreneur)."
+    ],
+    "evidence_used": [
+      {
+        "source_type": "news",
+        "title": "India's fintech sector ranks third globally in H1 2025 funding round: Tracxn",
+        "source_name": "IBEF",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOiQTsD3Y9oekEMFLXRMD6dgjetA--xnONEJpUIljAwl4_k7br6idFXa__qKdeGfppjOH8mYUb1FDbyDFGU-XXQ6xwoqZpEFsu9yMCOr9xKu1nFoNS62BdBhMBmF6k9uT1hNFYL0o9-IPzMUSSmrWIyCr10SHMCts12X1uILWhZlS29A5ZNlCf5jT3r4cQe35HiacrvHkGEVmvbUfpEfQM",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "news",
+        "title": "Fintech Funding August 2025: Indian FinTechs raise USD 472.8 Mn",
+        "source_name": "ET BFSI",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPnustgFFbsJYzwSNlbsAD-s2gMHUTyIePgcCjEs1dGEa-95QgNwytgKsBfLhpJQm3EoS5LIa3JwaDMxLVOb_eRMJ68IsLU5i0tLjSZt7JwxcvxXkjy7vOrutGFNN-jPRJqXRZSTRwqdxr55wa5II9-g-3szD_dfQ=",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "dataset",
+        "title": "FinTech in India - 2025 Market & Investments Trends",
+        "source_name": "Tracxn",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGynKDCNLvlH1dJrwoE3MrHYm3uuKfAzNMIi59hcML6dkG80hYXENowBGtVIXPUqyTgeoqOErnA9XjewsxEoxCR5CukVYAzpVW8rxD2LocnQbx4tKjJcbndIMm_tEuSImgjZFF6d6DOV7yXkDn3LM5KQ8D3GV2JRasqGY3HanleuLQ5PIhc2oApDdk5u2P0UF4CpkSXfAYcPkY7fnpULV4=",
+        "usage_reason": "fintech"
+      },
+      {
+        "source_type": "policy",
+        "title": "Fintech Laws and Regulations 2025 | India",
+        "source_name": "Global Legal Insights",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIIbTWBwyRC4s8ZrHIEA10SOwuMUk9CPKKKcbx2m5bKVD3Hz48m14tBxVc8LD3sxQzuX_CxzWtyJfjcSMMV1I97pintP63VR3enKEBOpAk_shp1vgdlWWmkf9iHJ8Spx95sUNzru9uBDna8Jq_QGNpR6Trywm6c-iqNLtYF0jrjponICUXDzNvqTJsYHt7JRZ1",
+        "usage_reason": "fintech"
+      },
+      {
+        "source_type": "policy",
+        "title": "India's Fintech Industry: How Government Policies Fuel Growth",
+        "source_name": "IMARC Group",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX9xu52PhkLOfSI6uCyT7Qn1STqWwSeDVb8stHHMYw2aRxXuwiYLPV4ifodlWAZjGRhQlrV00I1ckXBZciHVCHc4F1Ay9kkqxZ4YwdZAzg9trieEUafnARvSistxU-SsM9xxznqscIg7zLV8i4P0TyMENMJHiQBg0XY7ITc4ndArUWc6-BBvchsZqFM4LNBlDP7WL_",
+        "usage_reason": "fintech"
+      },
+      {
+        "source_type": "news",
+        "title": "Tech startup funding falls 17% to $10.5 billion in 2025: Report",
+        "source_name": "People Matters",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3lwTvLQMz2C1xshjsp7aOkr-0Wkm4L36gNX_pUr8qClEaT7H8apCog3W7jnQp36-yYsv4i4Jth-pshaOPipHbplW-9zAjoWbGWLGxNGWYcVn1EyQ5OHO0KCSw9kJIHqkzp1YK16aYl7uDQMzWlw7Mg6vP5p07UJ0aQc0Z-mRQmMNHLbjbNfoQnJPGRWxMNxPKszRY2v44TS33OoJ6qE25Ptj8DiuImz9ZFjjOJdwNZDqjAE7JjFL-VkhnzpmPt3Vs9NI=",
+        "usage_reason": "funding"
+      },
+      {
+        "source_type": "news",
+        "title": "Indian Fintech to Enter 2026 as AI and Compliance Take Center Stage",
+        "source_name": "Entrepreneur",
+        "year": "2025",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpBq-1RHrTYqlGfcWZYjQcVBExkrxnN93chi7V7QK19uWTIVyuBDvVUGcTC1sqf1Gnd5IA7f4a32lC6wrHu_7a3Ai2CHsQ17FuwuoxUCc8EB2XY2uirbur69OtpMLHHyLxfydjhxohprxJzTJqicM3fR4_ajw3tObDG6N1AWspzHHr4itAI8tD1NAf-CzDXcpjQbyIOl69LmPKuf4oQzbJdiVnFti-32w7E3c=",
+        "usage_reason": "fintech"
+      }
+    ],
+    "created_at": "2025-12-25T22:39:53.598730",
+    "metadata": {
+      "language": "en",
+      "engine_version": "1.0.0-rag-decision-centric",
+      "evidence_count": 7,
+      "sector": "Financial Services & FinTech",
+      "stage": "Seed",
+      "geography": "India - Metro Cities",
+      "raw_support_ratio": 0.4
+    }
   }
 ]

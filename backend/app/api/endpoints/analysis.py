@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Dict
-from app.schemas.analysis import AnalysisRequest, AnalysisResponse
+from app.schemas.analysis import AnalysisRequest, AnalysisResponse, TranslationRequest
 from app.core.orchestrator import AnalysisOrchestrator
+from app.generation.generator import Generator
 from app.core.storage import storage
 
 
@@ -51,3 +52,15 @@ async def get_analysis(analysis_id: str, user_id: str = None):
 async def get_all_evidence(user_id: str = None):
     # unique evidenrces
     return storage.get_all_evidence(user_id)
+
+
+@router.post("/translate")
+async def translate_text(
+    request: TranslationRequest,
+    generator: Generator = Depends(Generator)
+):
+    """
+    Dynamic AI translation layer to localize any text on the fly.
+    """
+    translated = await generator.translate(request.text, request.target_language)
+    return {"translated_text": translated}

@@ -56,3 +56,8 @@ class AnalysisResponse(BaseModel):
         None, description="ISO timestamp of when the analysis was performed"
     )
     metadata: Dict = {}
+
+
+class TranslationRequest(BaseModel):
+    text: str
+    target_language: str

@@ -3,7 +3,8 @@ import yaml
 import json
 from typing import List, Optional
 import asyncio
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from app.schemas.evidence import EvidenceUnit, SourceType
 from app.config.settings import settings
 from app.data.evidence_store import EvidenceStore
@@ -31,16 +32,14 @@ class Retriever:
             print("[*] Vector store disabled by config.")
 
         if settings.GOOGLE_API_KEY:
-            genai.configure(api_key=settings.GOOGLE_API_KEY)
-            print("[*] Google API Key found. Initializing AI components...")
+            self.client = genai.Client(
+                api_key=settings.GOOGLE_API_KEY,
+                http_options={'api_version': 'v1beta'}
+            )
+            print("[*] Google GenAI Client initialized.")
         else:
+            self.client = None
             print("[!] WARNING: GOOGLE_API_KEY not found. Generative retrieval will be disabled.")
-
-        # Initializing Gemini 2.0 with Live Web Search Tooling
-        self.model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash-exp", 
-            tools=[{"google_search_retrieval": {"dynamic_retrieval_config": {"mode": "dynamic", "dynamic_threshold": 0.3}}}]
-        )
 
     async def retrieve_relevant_evidence(
         self,
@@ -177,26 +176,49 @@ class Retriever:
         if not settings.GOOGLE_API_KEY:
             return []
 
+        # We tell the model to EXPLICITLY search the web first.
+        search_intent = f"{stage} {sector} funding trends {geography} 2024 2025"
+        print(f"[*] [LOG] AI Intent: Researching '{search_intent}' via Google...")
+        
         prompt = (
-            f"You are a Venture Capital Analyst. Use GOOGLE SEARCH to find the 5 most RELEVANT and RECENT "
-            f"(2024-2025) funding rounds, news, and regulatory updates for a {stage} startup in {sector} "
-            f"located in {geography}.\n\n"
-            f"STARTUP CONTEXT: {description}\n\n"
-            f"REQUIREMENTS:\n"
-            f"1. Identify REAL NAMES of investors and actual funding amounts if mentioned.\n"
-            f"2. Summarize each find into a structured format.\n"
-            f"3. Return ONLY a JSON list of objects with these keys: source_type, title, source_name, published_year, url, investors, content, usage_tags.\n"
-            f"4. source_type must be one of: news, policy, dataset.\n"
+            f"You are a Venture Capital Intelligence Bot with LIVE WEB ACCESS. "
+            f"Your TASK is to use your Google Search tool to find 5-7 ABSOLUTELY REAL, CURRENT, and VERIFIABLE "
+            f"evidence units for a {stage} startup in the {sector} sector targeting {geography}.\n\n"
+            f"STARTUP DESCRIPTION: {description}\n\n"
+            f"CONSTRAINTS:\n"
+            f"1. You MUST find REAL entities, names of investors (e.g., Blume, Peak XV, Accel, Peak XV, Accel, Elevation, Matrix), and actual recent news or policy changes from 2024-2025.\n"
+            f"2. DO NOT use placeholders or generic 'Investor A' names. If you cannot find a specific fact, DO NOT invent it.\n"
+            f"3. PROVIDE REAL URLs to the articles or reports you find.\n"
+            f"4. OUTPUT MUST BE A RAW JSON LIST of objects. NO markdown. NO prose.\n"
+            f"5. JSON SCHEMA: {{ 'source_type': 'news'|'policy'|'dataset', 'title': string, 'source_name': string, 'published_year': int, 'url': string, 'investors': [string], 'content': string, 'usage_tags': [string] }}\n"
         )
 
         try:
-            response = self.model.generate_content(
-                prompt,
-                generation_config={"response_mime_type": "application/json"}
+            print(f"[*] [LOG] Sending live search request to Gemini for {sector}...")
+            response = await self.client.aio.models.generate_content(
+                model="gemini-2.0-flash-exp",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    tools=[types.Tool(google_search=types.GoogleSearch())]
+                )
             )
-            print(f"[*] [DEBUG] Generative response received. Length: {len(response.text)}")
             
-            data = json.loads(response.text)
+            # Log grounding to see if it actually searched
+            if response.candidates and response.candidates[0].grounding_metadata:
+                print(f"[*] [LOG] LIVE SEARCH EVIDENCE DETECTED: Grounding metadata present.")
+            else:
+                print(f"[*] [LOG] WARNING: No grounding metadata. Results may be from internal model knowledge.")
+
+            raw_text = response.text.strip()
+            print(f"[*] [DEBUG] Generative response length: {len(raw_text)}")
+            
+            # Clean up potential markdown if model used it despite constraints
+            if "```json" in raw_text:
+                raw_text = raw_text.split("```json")[1].split("```")[0].strip()
+            elif "```" in raw_text:
+                raw_text = raw_text.split("```")[1].split("```")[0].strip()
+                
+            data = json.loads(raw_text)
             if not isinstance(data, list):
                 print(f"[!] [DEBUG] Expected list from LLM, got {type(data)}")
                 return []
