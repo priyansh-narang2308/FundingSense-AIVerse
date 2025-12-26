@@ -10,7 +10,6 @@ interface LanguageContextType {
 }
 
 const translations: Record<Language, Record<string, string>> = {
-  // ... (translations remain the same, truncated for brevity in this view but will be preserved in file)
   hi: {
     dashboard: "डैशबोर्ड",
     analyze: "विश्लेषण करें",
@@ -612,7 +611,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [userId, setUserId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Sync language with current session
     const syncLanguage = (user: any) => {
       const currentUserId = user?.id || null;
       setUserId(currentUserId);
@@ -622,12 +620,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setLanguageState(saved as Language);
     };
 
-    // Initial session check
     supabase.auth.getSession().then(({ data: { session } }) => {
       syncLanguage(session?.user);
     });
-
-    // Listen for auth state changes (login/logout)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       syncLanguage(session?.user);
     });
@@ -639,7 +634,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguageState(lang);
     const key = userId ? `uiLanguage_${userId}` : "uiLanguage_guest";
     localStorage.setItem(key, lang);
-    // We also update the general one for the landing page transition
+
     localStorage.setItem("uiLanguage", lang);
     document.documentElement.lang = lang;
   };
@@ -647,7 +642,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     document.documentElement.lang = language;
 
-    // Sync Google Translate engine if available
+
     const syncGoogleTranslate = () => {
       const googleCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
       if (googleCombo) {
@@ -656,7 +651,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }
     };
 
-    // Small delay to ensure Google script has loaded and rendered the combo
+
     const timer = setTimeout(syncGoogleTranslate, 1500);
     return () => clearTimeout(timer);
   }, [language]);
