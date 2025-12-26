@@ -158,3 +158,9 @@ export const getChatMessages = async (userId: string): Promise<any[]> => {
   if (!response.ok) throw new Error("Failed to fetch chat history");
   return response.json();
 };
+
+export const getIntelligenceLibrary = async (): Promise<any[]> => {
+  const response = await fetch(`${API_BASE_URL}/intelligence`);
+  if (!response.ok) throw new Error("Failed to fetch intelligence library");
+  return response.json();
+};

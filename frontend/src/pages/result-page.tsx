@@ -25,6 +25,7 @@ import {
 import { getAnalysisById } from "../services/api";
 import { useLanguage } from "../contexts/LanguageContext";
 import { supabase } from "../utils/supabase";
+import ReactMarkdown from "react-markdown";
 
 export default function Results() {
   const { t } = useLanguage();
@@ -36,12 +37,11 @@ export default function Results() {
   useEffect(() => {
     const fetchAnalysis = async () => {
       if (!id) return;
-      
+
       try {
         const { data: { user } } = await supabase.auth.getUser();
         const analysis = await getAnalysisById(id, user?.id);
-        
-        // Map backend response to the UI's expected format
+
         setData({
           startup: {
             name: "Analysis Result",
@@ -137,7 +137,7 @@ export default function Results() {
           </div>
         </div>
 
-        {/* Startup Summary Header */}
+
         <div className="card-elevated overflow-hidden border-none shadow-glow">
           <div className="gradient-accent p-1 h-1.5 w-full" />
           <div className="p-8 pb-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-card">
@@ -154,9 +154,9 @@ export default function Results() {
                     {t("analysis_completed")}
                   </Badge>
                 </div>
-                <p className="text-muted-foreground mt-2 text-lg leading-relaxed">
-                  {data.startup.description}
-                </p>
+                <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground mt-2 leading-relaxed">
+                  <ReactMarkdown>{data.startup.description}</ReactMarkdown>
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mt-5">
                   <Badge variant="secondary" className="px-3 py-1 text-xs">
                     <Building2 className="w-3.5 h-3.5 mr-1.5 opacity-70" />
@@ -195,9 +195,9 @@ export default function Results() {
           </div>
         </div>
 
-        {/* Main content grid */}
+
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Recommended Investors */}
+
           <div className="lg:col-span-2 space-y-4">
             <h3 className="text-lg font-display font-semibold text-foreground flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-success" />
@@ -242,7 +242,9 @@ export default function Results() {
                     {investor.reasons.map((reason: string, i: number) => (
                       <div key={i} className="flex items-start gap-2.5 text-xs">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                        <span className="text-foreground/80 leading-snug">{reason}</span>
+                        <div className="text-foreground/80 leading-snug prose-xs prose-p:m-0">
+                          <ReactMarkdown>{reason}</ReactMarkdown>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -251,9 +253,7 @@ export default function Results() {
             </div>
           </div>
 
-          {/* Insights sidebar */}
           <div className="space-y-6">
-            {/* Why This Fits */}
             <div className="card-elevated p-6 bg-success/5 border-success/20">
               <h3 className="font-display font-semibold text-foreground flex items-center gap-2 mb-4">
                 <Lightbulb className="w-5 h-5 text-success" />
@@ -266,7 +266,9 @@ export default function Results() {
                       <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center shrink-0 mt-0.5">
                         <CheckCircle className="w-3.5 h-3.5 text-success" />
                       </div>
-                      <span className="text-foreground/90 font-medium leading-relaxed">{reason}</span>
+                      <div className="text-foreground/90 font-medium leading-relaxed prose prose-sm dark:prose-invert prose-p:m-0">
+                        <ReactMarkdown>{reason}</ReactMarkdown>
+                      </div>
                     </li>
                   ))
                 ) : (
@@ -278,7 +280,6 @@ export default function Results() {
               </ul>
             </div>
 
-            {/* Why This Does Not Fit / Considerations */}
             <div className={`card-elevated p-6 ${data.whyDoesNotFit.length > 0 ? 'bg-warning/5 border-warning/20' : 'bg-muted/30 border-dashed opacity-80'}`}>
               <h3 className="font-display font-semibold text-foreground flex items-center gap-2 mb-4">
                 {data.whyDoesNotFit.length > 0 ? (
@@ -295,7 +296,9 @@ export default function Results() {
                       <div className="w-5 h-5 rounded-full bg-warning/20 flex items-center justify-center shrink-0 mt-0.5">
                         <XCircle className="w-3.5 h-3.5 text-warning" />
                       </div>
-                      <span className="text-foreground/90 font-medium leading-relaxed">{reason}</span>
+                      <div className="text-foreground/90 font-medium leading-relaxed prose prose-sm dark:prose-invert prose-p:m-0">
+                        <ReactMarkdown>{reason}</ReactMarkdown>
+                      </div>
                     </li>
                   ))
                 ) : (
@@ -311,7 +314,7 @@ export default function Results() {
           </div>
         </div>
 
-        {/* Evidence Section */}
+
         <Collapsible open={evidenceOpen} onOpenChange={setEvidenceOpen}>
           <CollapsibleTrigger asChild>
             <div className="card-interactive p-6 cursor-pointer">
@@ -330,9 +333,8 @@ export default function Results() {
                   </div>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-muted-foreground transition-transform ${
-                    evidenceOpen ? "rotate-180" : ""
-                  }`}
+                  className={`w-5 h-5 text-muted-foreground transition-transform ${evidenceOpen ? "rotate-180" : ""
+                    }`}
                 />
               </div>
             </div>
@@ -361,9 +363,9 @@ export default function Results() {
                       </p>
                     </div>
                   </div>
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
+                  <Button
+                    variant="ghost"
+                    size="icon"
                     className="shrink-0"
                     onClick={() => item.url && window.open(item.url, '_blank')}
                     disabled={!item.url}
@@ -376,7 +378,7 @@ export default function Results() {
           </CollapsibleContent>
         </Collapsible>
 
-        {/* Actions */}
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/analyze">
             <Button variant="outline" size="lg">
