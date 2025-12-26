@@ -17,6 +17,7 @@ import Results from "./pages/result-page";
 import NotFound from "./pages/not-found";
 
 import { LanguageProvider } from "./contexts/LanguageContext";
+import ChatPage from "./pages/chat-page";
 
 const queryClient = new QueryClient();
 
@@ -26,25 +27,26 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/analyze" element={<Analyze />} />
-          <Route path="/results/:id" element={<Results />} />
-          <Route path="/evidence" element={<Evidence />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/settings/language" element={<LanguageSettings />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/analyze" element={<Analyze />} />
+            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/results/:id" element={<Results />} />
+            <Route path="/evidence" element={<Evidence />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/language" element={<LanguageSettings />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>
 );

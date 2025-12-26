@@ -4,6 +4,7 @@ import { supabase } from "../../utils/supabase";
 import {
   LayoutDashboard,
   Search,
+  MessageSquare,
   FileText,
   Globe,
   Settings,
@@ -15,7 +16,6 @@ import {
   X,
   Moon,
   Sun,
-  User,
 } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Button } from "../ui/button";
@@ -37,6 +37,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const navItems = [
     { icon: LayoutDashboard, label: t("dashboard"), path: "/dashboard" },
     { icon: Search, label: t("analyze"), path: "/analyze" },
+    { icon: MessageSquare, label: t("q_and_a"), path: "/chat" },
     { icon: FileText, label: t("evidence"), path: "/evidence" },
     { icon: Globe, label: t("language_settings"), path: "/settings/language" },
     { icon: Settings, label: t("settings"), path: "/settings" },
@@ -69,7 +70,6 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="min-h-screen flex bg-background selection:bg-primary/20 transition-colors duration-500">
-      {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -82,7 +82,6 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         )}
       </AnimatePresence>
 
-      {/* Sidebar Container */}
       <aside
         className={cn(
           "fixed lg:sticky top-0 left-0 z-50 h-screen bg-card/50 backdrop-blur-xl border-r border-border/50 flex flex-col transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
@@ -90,17 +89,16 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
-        {/* Header/Logo Section */}
         <div className="h-24 flex items-center justify-between px-6 border-b border-border/10">
           <Link to="/dashboard" className="flex items-center gap-3 group">
-            <motion.div 
+            <motion.div
               whileHover={{ rotate: 15, scale: 1.1 }}
               className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-emerald-600 flex items-center justify-center shrink-0 shadow-lg shadow-primary/30"
             >
               <TrendingUp className="w-6 h-6 text-white" />
             </motion.div>
             {!collapsed && (
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="text-xl font-display font-black text-foreground tracking-tighter"
@@ -131,7 +129,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </Button>
         </div>
 
-        {/* Navigation Items */}
+
         <nav className="flex-1 py-10 px-4 space-y-3 overflow-y-auto overflow-x-hidden custom-scrollbar">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -147,7 +145,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 )}
               >
-                {/* Active Background Slide Effect */}
+
                 {isActive && (
                   <motion.div
                     layoutId="active-indicator"
@@ -156,14 +154,14 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
-                
+
                 <item.icon className={cn(
                   "w-5 h-5 shrink-0 transition-all duration-300 relative z-10",
                   isActive ? "text-primary scale-110" : "group-hover:text-primary group-hover:scale-110"
                 )} />
-                
+
                 {!collapsed && (
-                  <motion.span 
+                  <motion.span
                     className="relative z-10 tracking-tight text-sm uppercase font-bold"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -171,22 +169,22 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     {item.label}
                   </motion.span>
                 )}
-                
+
                 {isActive && collapsed && (
-                   <motion.div 
-                     layoutId="collapsed-active-bar"
-                     className="absolute right-0 w-1.5 h-6 bg-primary rounded-l-full" 
-                   />
+                  <motion.div
+                    layoutId="collapsed-active-bar"
+                    className="absolute right-0 w-1.5 h-6 bg-primary rounded-l-full"
+                  />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Sidebar Bottom Actions */}
+
         <div className="p-6 border-t border-border/10 space-y-4">
-           {/* Profile Preview (Simple) */}
-          
+
+
           <div className="flex flex-col gap-2">
             <button
               onClick={toggleTheme}
@@ -209,12 +207,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               {!collapsed && <span className="font-bold text-xs uppercase tracking-widest">{t("logout")}</span>}
             </button>
           </div>
+
+          {!collapsed && (
+            <div className="mt-4 px-4 hidden"> {/* Truly hidden but in DOM */}
+              <div id="google_translate_element"></div>
+            </div>
+          )}
         </div>
       </aside>
-
-      {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-h-screen relative overflow-hidden">
-        {/* Mobile Header (Only on Small Screens) */}
         <header className="lg:hidden h-20 border-b border-border/50 flex items-center justify-between px-6 bg-card/80 backdrop-blur-xl sticky top-0 z-30">
           <Button
             variant="ghost"
@@ -236,13 +237,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </Button>
         </header>
-
-        {/* Content Wrapper */}
         <main className="flex-1 p-6 lg:p-14 overflow-y-auto relative z-10 custom-scrollbar">
-          {/* Subtle background glow elements */}
           <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[180px] -z-10 pointer-events-none" />
           <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
-          
+
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -253,7 +251,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </motion.div>
         </main>
       </div>
-      
+
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;

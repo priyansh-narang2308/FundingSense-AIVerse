@@ -122,3 +122,39 @@ export const translateText = async (
     return text;
   }
 };
+
+export interface ChatRequest {
+  message: string;
+  analysis_id?: string;
+  language: string;
+  user_id?: string;
+  chat_history?: { role: string; content: string }[];
+}
+
+export interface ChatResponse {
+  answer: string;
+  sources: { title: string; url?: string; source_name: string }[];
+  language: string;
+}
+
+export const chatWithAI = async (data: ChatRequest): Promise<ChatResponse> => {
+  const response = await fetch(`${API_BASE_URL}/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to get answer from AI");
+  }
+
+  return response.json();
+};
+
+export const getChatMessages = async (userId: string): Promise<any[]> => {
+  const response = await fetch(`${API_BASE_URL}/chat/history?user_id=${userId}`);
+  if (!response.ok) throw new Error("Failed to fetch chat history");
+  return response.json();
+};

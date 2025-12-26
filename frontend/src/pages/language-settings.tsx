@@ -35,9 +35,21 @@ export default function LanguageSettings() {
 
   const handleSave = () => {
     setLanguage(uiLanguage as any);
+
+    // Programmatic trigger for Google Translate
+    try {
+      const googleCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (googleCombo) {
+        googleCombo.value = uiLanguage;
+        googleCombo.dispatchEvent(new Event('change'));
+      }
+    } catch (e) {
+      console.warn("Google Translate trigger failed:", e);
+    }
+
     toast({
       title: t("save_prefs"),
-      description: "Preferences successfully synchronized with your profile.",
+      description: "Full-page translation engine has been re-synchronized.",
       className: "bg-primary text-primary-foreground border-none shadow-xl rounded-2xl",
     });
   };

@@ -250,4 +250,32 @@
       transform: rotate(360deg);
     }
   }
+
+  /* Google Translate Styling */
+  .google-translate-container {
+    @apply mt-2;
+  }
+  
+  .goog-te-gadget {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    color: hsl(var(--muted-foreground)) !important;
+  }
+  
+  .goog-te-gadget .goog-te-combo {
+    @apply bg-background border border-border rounded-lg px-2 py-1 text-xs w-full outline-none focus:border-primary/50 transition-colors;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .goog-te-gadget span {
+    display: none !important; /* Hide 'Powered by Google' text */
+  }
+  
+  .goog-te-banner-frame {
+    display: none !important; /* Hide the top frame banner */
+  }
+  
+  body {
+    top: 0 !important;
+  }
 }

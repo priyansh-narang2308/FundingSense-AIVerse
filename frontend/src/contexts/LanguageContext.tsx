@@ -68,6 +68,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "विश्लेषण पूरा हुआ",
     match: "मिलान",
     key_reasons: "मुख्य कारण",
+    q_and_a: "प्रश्न और उत्तर",
+    chat_with_ai: "एआई के साथ चैट करें",
+    select_context: "संदर्भ के लिए अपना स्टार्टअप चुनें",
+    type_message: "अपना संदेश टाइप करें...",
+    no_startups_yet: "अभी तक कोई स्टार्टअप नहीं",
+    keep_dreaming: "सपने देखते रहें, बड़ा सोचें!",
     analyzing_fit: "फिट कारकों का विश्लेषण किया जा रहा है...",
     low: "कम",
     medium: "मध्यम",
@@ -136,6 +142,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "বিশ্লেষণ সম্পন্ন হয়েছে",
     match: "মিল",
     key_reasons: "প্রধান কারণ",
+    q_and_a: "প্রশ্ন এবং উত্তর",
+    chat_with_ai: "AI এর সাথে চ্যাট করুন",
+    select_context: "প্রসঙ্গের জন্য আপনার স্টার্টআপ নির্বাচন করুন",
+    type_message: "আপনার বার্তা টাইপ করুন...",
+    no_startups_yet: "এখনও কোনও স্টার্টআপ নেই",
+    keep_dreaming: "স্বপ্ন দেখতে থাকুন, বড় ভাবুন!",
     analyzing_fit: "ফিট কারণ বিশ্লেষণ করা হচ্ছে...",
     low: "কম",
     medium: "মাঝারি",
@@ -204,6 +216,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "பகுப்பாய்வு முடிந்தது",
     match: "பொருத்தம்",
     key_reasons: "முக்கிய காரணங்கள்",
+    q_and_a: "கேள்வி பதில்",
+    chat_with_ai: "AI உடன் அரட்டையடிக்கவும்",
+    select_context: "சூழலுக்கு உங்கள் ஸ்டார்ட்அப்பைத் தேர்ந்தெடுக்கவும்",
+    type_message: "உங்கள் செய்தியைத் தட்டச்சு செய்க...",
+    no_startups_yet: "இன்னும் ஸ்டார்ட்அப்கள் இல்லை",
+    keep_dreaming: "கனவு காணுங்கள், பெரிதாக சிந்தியுங்கள்!",
     analyzing_fit: "பொருத்த காரணிகள் பகுப்பாய்வு செய்யப்படுகின்றன...",
     low: "குறைந்த",
     medium: "நடுத்தர",
@@ -272,6 +290,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "విశ్లేషణ పూర్తయింది",
     match: "సరిపోలిక",
     key_reasons: "ముఖ్య కారణాలు",
+    q_and_a: "ప్రశ్నోత్తరాలు",
+    chat_with_ai: "AIతో చాట్ చేయండి",
+    select_context: "సందర్భం కోసం మీ స్టార్టప్‌ని ఎంచుకోండి",
+    type_message: "మీ సందేశాన్ని టైప్ చేయండి...",
+    no_startups_yet: "ఇంకా స్టార్టప్‌లు లేవు",
+    keep_dreaming: "కలలు కంటూనే ఉండండి, పెద్దగా ఆలోచించండి!",
     analyzing_fit: "సరిపోలిక కారకాలను విశ్లేషిస్తున్నారు...",
     low: "తక్కువ",
     medium: "మధ్యస్థ",
@@ -340,6 +364,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "विश्लेषण पूर्ण झाले",
     match: "जुळवणी",
     key_reasons: "मुख्य कारणे",
+    q_and_a: "प्रश्न आणि उत्तरे",
+    chat_with_ai: "AI सह चॅट करा",
+    select_context: "संदर्भासाठी तुमचा स्टार्टअप निवडा",
+    type_message: "तुमचा संदेश टाइप करा...",
+    no_startups_yet: "अद्याप कोणतेही स्टार्टअप नाही",
+    keep_dreaming: "स्वप्ने पाहत रहा, मोठा विचार करा!",
     analyzing_fit: "जुळवणी घटकांचे विश्लेषण करत आहे...",
     low: "कमी",
     medium: "मध्यम",
@@ -408,6 +438,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "વિશ્લેષણ પૂર્ણ થયું",
     match: "મેળ",
     key_reasons: "મુખ્ય કારણો",
+    q_and_a: "પ્રશ્ન અને ઉત્તર",
+    chat_with_ai: "AI સાથે ચેટ કરો",
+    select_context: "સંદર્ભ માટે તમારો સ્ટાર્ટઅપ પસંદ કરો",
+    type_message: "તમારો સંદેશ લખો...",
+    no_startups_yet: "હજી સુધી કોઈ સ્ટાર્ટઅપ નથી",
+    keep_dreaming: "સ્વપ્ન જોતા રહો, મોટું વિચારો!",
     analyzing_fit: "ફિટ પરિબળોનું વિશ્લેષણ કરી રહ્યા છીએ...",
     low: "ઓછી",
     medium: "મધ્યમ",
@@ -476,6 +512,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "ವಿಶ್ಲೇಷಣೆ ಪೂರ್ಣಗೊಂಡಿದೆ",
     match: "ಹೊಂದಿಕೆ",
     key_reasons: "ಪ್ರಮುಖ ಕಾರಣಗಳು",
+    q_and_a: "ಪ್ರಶ್ನೋತ್ತರ",
+    chat_with_ai: "AI ನೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ",
+    select_context: "ಸಂದರ್ಭಕ್ಕಾಗಿ ನಿಮ್ಮ ಸ್ಟಾರ್ಟ್ಅಪ್ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿ",
+    type_message: "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+    no_startups_yet: "ಇನ್ನೂ ಯಾವುದೇ ಸ್ಟಾರ್ಟ್ಅಪ್‌ಗಳಿಲ್ಲ",
+    keep_dreaming: "ಕನಸು ಕಾಣುತ್ತಿರಿ, ದೊಡ್ಡದಾಗಿ ಯೋಚಿಸಿ!",
     analyzing_fit: "ಹೊಂದಾಣಿಕೆ ಅಂಶಗಳನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
     low: "ಕಡಿಮೆ",
     medium: "ಮಧ್ಯಮ",
@@ -544,6 +586,12 @@ const translations: Record<Language, Record<string, string>> = {
     analysis_completed: "Analysis Completed",
     match: "Match",
     key_reasons: "Key Reasons",
+    q_and_a: "Q & A",
+    chat_with_ai: "Chat with AI",
+    select_context: "Select your startup for context",
+    type_message: "Type your message...",
+    no_startups_yet: "No startups yet",
+    keep_dreaming: "Keep dreaming, think big!",
     analyzing_fit: "Analyzing fit factors...",
     low: "Low",
     medium: "Medium",
@@ -598,6 +646,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     document.documentElement.lang = language;
+
+    // Sync Google Translate engine if available
+    const syncGoogleTranslate = () => {
+      const googleCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (googleCombo) {
+        googleCombo.value = language;
+        googleCombo.dispatchEvent(new Event('change'));
+      }
+    };
+
+    // Small delay to ensure Google script has loaded and rendered the combo
+    const timer = setTimeout(syncGoogleTranslate, 1500);
+    return () => clearTimeout(timer);
   }, [language]);
 
   const t = (key: string) => {
