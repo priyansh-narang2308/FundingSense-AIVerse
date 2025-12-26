@@ -26,10 +26,7 @@ class ChatOrchestrator:
                 geography = analysis.metadata.get("geography", "India") if analysis.metadata else "India"
                 stage = analysis.metadata.get("stage", "") if analysis.metadata else ""
 
-        # 2. TRANSLATION-AWARE QUERY EXPANSION
-        # If the query is in an Indic language, we need an English version 
-        # to query the English-heavy vector stores and global web data accurately.
-        
+ 
         retrieval_query = request.message
         if request.language != "en":
             try:
@@ -91,7 +88,7 @@ class ChatOrchestrator:
                 model="gemini-2.0-flash-exp",
                 contents=full_prompt,
                 config=types.GenerateContentConfig(
-                    temperature=0.4 # Lower temperature for higher grounding accuracy
+                    temperature=0.4
                 )
             )
             answer = response.text.strip()
